@@ -9,7 +9,7 @@ Repositório com as palestras ministradas por mim
 
 -------------------------------------------------------------------------------------------------------------------------
 
-Eventos ministrados:
+### Eventos ministrados:
 - PHP Experience 2017
 - Meetup PhpRio Março 2017
 - The developers conference Florianópolis 2018*
