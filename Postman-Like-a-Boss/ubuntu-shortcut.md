@@ -10,7 +10,7 @@
 Version=1.0
 Type=Application
 Name=Postman
-Icon=/home/{{ username }}/Postman/logo-glyph.png
+Icon=/home/{{ username }}/Postman/logo-icon.png
 Exec="/home/{{ username }}/Postman/Postman" %f
 Comment=Postman Native App
 Categories=Application;
