@@ -5,17 +5,17 @@ Nesta palestra mostraremos como aumentar sua produtividade na validação de API
 
 Tópicos: 
 
-> - Apresentação do palestrante. 
-> - Criando as primeiras requisições com os verbos get, post, put, delete. 
-> - Configurando ambientes e variáveis globais. 
-> - Requisições autenticadas. 
-> - Criando tests e pre-request .scripts*. 
-> - API monitor. 
-> - Mockando uma API. 
+- Apresentação do palestrante. 
+- Criando as primeiras requisições com os verbos get, post, put, delete. 
+- Configurando ambientes e variáveis globais. 
+- Requisições autenticadas. 
+- Criando tests e pre-request .scripts*. 
+- API monitor. 
+- Mockando uma API. 
 
 Extras:
-> - Criando documentação. 
-> - Compartilhando suas collections. 
+- Criando documentação. 
+- Compartilhando suas collections. 
 
-> - Dúvidas. 
-> - Agradecimento. 
+- Dúvidas. 
+- Agradecimento. 
