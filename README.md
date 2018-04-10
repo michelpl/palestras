@@ -13,4 +13,4 @@ Repositório com as palestras ministradas por mim
 - PHP Experience 2017
 - Meetup PhpRio Março 2017
 - The developers conference Florianópolis 2018*
-- Meetup Php Abril 2018*
+- Meetup PhpRio Abril 2018
