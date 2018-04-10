@@ -2,7 +2,7 @@
 
 ### Repositório com as palestras ministradas por mim
 
-**Motivação: organizar e centralizar todos os links, docs e conteúdos úteis para apresentação e facilitar o compartilhamento**
+**Motivação: organizar e centralizar todos os links, docs e conteúdos úteis para apresentação, visando facilitar o compartilhamento e colaboração.**
 
 São elas:
 
