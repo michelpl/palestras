@@ -1,7 +1,7 @@
 # Palestra "Consumindo e criando testes para sua API like a boss com Postman".
 
 
-Nesta palestra mostraremos como aumentar sua produtividade na validação de API's, criando um ambiente de consumo e testes com Postman. Iremos também mostrar um exemplo com uma API real.
+Nesta palestra mostraremos como aumentar sua produtividade na validação de API's, criando um ambiente de consumo e testes com [Postman](https://www.getpostman.com/). Iremos também mostrar um exemplo com uma API real.
 
 [Apresentação](https://github.com/michelpl/palestras/blob/master/Postman-Like-a-Boss/Apresentacao.pdf)
 
@@ -23,3 +23,4 @@ Tópicos:
 - Gerando docs a partir de collections
 - Newman
 
+https://www.getpostman.com/
