@@ -3,6 +3,8 @@
 
 Nesta palestra mostraremos como aumentar sua produtividade na validação de API's, criando um ambiente de consumo e testes com Postman. Iremos também mostrar um exemplo com uma API real.
 
+[Apresentação](https://github.com/michelpl/palestras/blob/master/Postman-Like-a-Boss/Apresentacao.pdf)
+
 Tópicos: 
 
 - Interface e requests básicos
