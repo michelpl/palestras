@@ -5,6 +5,8 @@ Nesta palestra mostraremos como aumentar sua produtividade na validação de API
 
 [Apresentação](https://github.com/michelpl/palestras/blob/master/Postman-Like-a-Boss/Apresentacao.pdf)
 
+![Image of first slide](https://raw.githubusercontent.com/michelpl/palestras/master/Postman-Like-a-Boss/slide1.png)
+
 Tópicos: 
 
 - Interface e requests básicos
