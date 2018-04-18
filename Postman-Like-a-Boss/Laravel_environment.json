@@ -1,0 +1,27 @@
+{
+  "id": "7e229cb6-ce38-4404-a56b-b42077374720",
+  "name": "Laravel API",
+  "values": [
+    {
+      "key": "url",
+      "value": "http://localhost:8000/api/",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "timestamp",
+      "value": "2018-4",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "product_id",
+      "value": 35,
+      "enabled": true,
+      "type": "text"
+    }
+  ],
+  "_postman_variable_scope": "environment",
+  "_postman_exported_at": "2018-04-18T04:50:39.354Z",
+  "_postman_exported_using": "Postman/6.0.10"
+}

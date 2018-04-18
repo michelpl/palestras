@@ -1,0 +1,462 @@
+{
+	"info": {
+		"_postman_id": "bed5c118-4ec3-3b30-cd1c-15f8b81a0f40",
+		"name": "Laravel API",
+		"description": "Laravel API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Product",
+			"description": "",
+			"item": [
+				{
+					"name": "Post",
+					"description": null,
+					"item": [
+						{
+							"name": "Create product",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "ee55ba1e-8c53-411a-b544-a526aa93302c",
+										"type": "text/javascript",
+										"exec": [
+											"pm.test(\"Criou o produto\", function () {",
+											"    pm.response.to.have.status(201);",
+											"    ",
+											"    console.log(pm.response.json());",
+											"    ",
+											"    pm.environment.set(\"product_id\", pm.response.json().id);",
+											"});",
+											"",
+											"pm.test(\"Id existe e tem que ser menor que 999\", function(){",
+											"   pm.expect(pm.response.json().id).to.below(999); ",
+											"});"
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "16546934-4278-47e2-a41c-5fd02749e076",
+										"type": "text/javascript",
+										"exec": [
+											"date = new Date()",
+											"year = date.getFullYear();",
+											"month = parseInt(date.getMonth()) + 1;",
+											"",
+											"pm.environment.set(\"timestamp\", year + \"-\" + month);"
+										]
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Iphone\",\n  \"description\": \"iPhone is a revolutionary new mobile phone that allows you to make a call by simply tapping a name\",\n  \"price\": 10.90\n}"
+								},
+								"url": {
+									"raw": "{{url}}products/",
+									"host": [
+										"{{url}}products"
+									],
+									"path": [
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create product (Bad request)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "7184171b-b256-4937-b9ed-d57e1862c01c",
+										"type": "text/javascript",
+										"exec": [
+											"pm.test(\"Não conseguiu criar produto com descrição maior igual a 500 caracteres\", function () {",
+											"    pm.response.to.have.status(400);",
+											"    ",
+											"});"
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "5f1200c1-553d-4611-b8ad-6b440042348a",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Chaveiro\",\n  \"description\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur facilisis felis id dolor hendrerit, et sagittis velit lacinia. Nunc volutpat ex viverra accumsan elementum. Sed ornare luctus porta. Nam egestas purus sit amet nibh facilisis ultricies. Donec pharetra purus at aliquam congue. In at purus commodo, ultricies ligula at, tristique augue. Sed scelerisque, purus at molestie euismod, libero velit efficitur lorem, eu fringilla odio lacus laoreet tellus. In nec augue in augue luctus aliquet. Curabitur porta eros vitae dolor aliquam aliquet. Ut at fermentum turpis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris viverra orci vitae magna sagittis, vel ultricies sapien viverra. Curabitur sit amet odio id eros varius vestibulum a a tortor. Donec mi erat, faucibus sit amet erat sit amet, pulvinar ornare est.\",\n  \"price\": 4.99\n}"
+								},
+								"url": {
+									"raw": "{{url}}products/",
+									"host": [
+										"{{url}}products"
+									],
+									"path": [
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "4cbfb57a-743d-46dd-8d78-304a9961e4da",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "e98780f2-56e4-4943-8b33-c42a4934b7c8",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Get",
+					"description": "",
+					"item": [
+						{
+							"name": "Get products",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "451c5368-b215-4b91-985d-d0208873c4fe",
+										"type": "text/javascript",
+										"exec": [
+											"pm.test(\"Pegou lista de produtos\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"",
+											"// Verificar o padrão do json com biblioteca",
+											"// verificar valor com ",
+											"/*pm.test(\"Your test name\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.value).to.eql(100);",
+											"});*/",
+											"// Setar valor de uma variável de ambiente",
+											"// Verificar header da response",
+											"// Verificar tempo de resposta",
+											"// Enviar uma request via teste",
+											"",
+											"// Deu 200, mas o teste falhou",
+											"//Criar um que dê erro",
+											"//Limpar variável de ambiente",
+											"",
+											"",
+											"",
+											""
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "16546934-4278-47e2-a41c-5fd02749e076",
+										"type": "text/javascript",
+										"exec": [
+											"date = new Date()",
+											"year = date.getFullYear();",
+											"month = parseInt(date.getMonth()) + 1;",
+											"",
+											"pm.environment.set(\"timestamp\", year + \"-\" + month);"
+										]
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Iphone\",\n  \"description\": \"iPhone is a revolutionary new mobile phone that allows you to make a call by simply tapping a name\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}products/",
+									"host": [
+										"{{url}}products"
+									],
+									"path": [
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get product",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "cd04fb7c-50c4-4e5a-afea-ee4c87486ffd",
+										"type": "text/javascript",
+										"exec": [
+											"//Id passado por variável de ambiente ",
+											"",
+											"pm.test(\"Retornou produto pelo id\", function () {",
+											"    pm.response.to.have.status(200);",
+											"    //Retornou um produto com o id igual a variável de amviente",
+											"    pm.expect(pm.response.json().id).to.eql(pm.environment.get(\"product_id\"))",
+											"    ",
+											"    ",
+											"});",
+											"",
+											"//Verifica tempo de resposta",
+											"pm.test(\"Tempo de resposta menor que 50ms\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(50);",
+											"});"
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "147fdd0c-6b6c-489b-be70-a18ad028f641",
+										"type": "text/javascript",
+										"exec": [
+											"date = new Date()",
+											"year = date.getFullYear();",
+											"month = parseInt(date.getMonth()) + 1;",
+											"",
+											"pm.environment.set(\"timestamp\", year + \"-\" + month);"
+										]
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Iphone\",\n  \"description\": \"iPhone is a revolutionary new mobile phone that allows you to make a call by simply tapping a name\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}products/{{product_id}}",
+									"host": [
+										"{{url}}products"
+									],
+									"path": [
+										"{{product_id}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Api root",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "95d5c2ee-a4a4-4c59-a9b4-3b7de1e9a711",
+										"type": "text/javascript",
+										"exec": [
+											"pm.test(\"Api root OK\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										]
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"post\": \"Content\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}",
+									"host": [
+										"{{url}}"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "182c1b56-cd93-4c10-b84c-1ee89e39af35",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "55fa4711-2164-4f96-8b2f-1cfbbdb9a070",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Put",
+					"description": null,
+					"item": [
+						{
+							"name": "Update product",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "7963688f-841d-402d-985d-dc515cc32255",
+										"type": "text/javascript",
+										"exec": [
+											"pm.environment.unset(\"product_id\");"
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "16546934-4278-47e2-a41c-5fd02749e076",
+										"type": "text/javascript",
+										"exec": [
+											"date = new Date()",
+											"year = date.getFullYear();",
+											"month = parseInt(date.getMonth()) + 1;",
+											"",
+											"pm.environment.set(\"timestamp\", year + \"-\" + month);"
+										]
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Iphone X\",\n  \"description\": \"iPhone is a revolutionary new mobile phone that allows you to make a call by simply tapping a name\",\n  \"price\": 10.51\n}"
+								},
+								"url": {
+									"raw": "{{url}}products/{{product_id}}",
+									"host": [
+										"{{url}}products"
+									],
+									"path": [
+										"{{product_id}}"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "2db25291-5752-4d0f-8171-d0ec6a136090",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "331069c8-2b10-4ce3-ac2e-f750aa69b925",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		}
+	]
+}
