@@ -23,4 +23,5 @@ Tópicos:
 - Gerando docs a partir de collections
 - Newman
 
+
 https://www.getpostman.com/
