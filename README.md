@@ -14,7 +14,7 @@ São elas:
 -------------------------------------------------------------------------------------------------------------------------
 
 ### Eventos ministrados:
+- The developers conference Florianópolis 2018
+- Meetup PhpRio Abril 2018
 - PHP Experience 2017
 - Meetup PhpRio Março 2017
-- The developers conference Florianópolis 2018*
-- Meetup PhpRio Abril 2018
