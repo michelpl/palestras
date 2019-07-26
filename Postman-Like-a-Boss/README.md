@@ -3,6 +3,9 @@
 
 Nesta palestra mostrarei como aumentar sua produtividade na validação de API's, criando um ambiente de consumo e testes com [Postman](https://www.getpostman.com/).
 
+Com essa incrível ferramenta, conseguimos montar um fluxo de ponta a ponta para a validação do design e construção de uma API.
+Desde a criação de mock servers à execução automatizada dos testes funcionais de uma collection, o Postman facilita a vida do desenvolvedor. Trazendo ferramentas pensadas em como tornar o desenvolvimento de suas aplicações mais rápido e confiável.
+
 ## Veja [aqui](https://github.com/michelpl/palestras/blob/master/Postman-Like-a-Boss/Apresentacao.pdf) os slides da apresentação em pdf 
 
 ![Image of first slide](https://raw.githubusercontent.com/michelpl/palestras/master/Postman-Like-a-Boss/slide1.png)
@@ -21,7 +24,7 @@ Tópicos:
 - Runner
 - Postman monitor
 - Gerando docs a partir de collections
-- Newman
+- Automatizando a execução de testes com o Newman
 
 
 https://www.getpostman.com/
