@@ -14,6 +14,7 @@ São elas:
 -------------------------------------------------------------------------------------------------------------------------
 
 ### Eventos ministrados:
+- PHPeste 2019
 - The developers conference Florianópolis 2018
 - Meetup PhpRio Abril 2018
 - PHP Experience 2017
